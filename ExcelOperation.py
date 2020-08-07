@@ -66,7 +66,7 @@ class cFileOpt:
 				self.OutputSht.cell(row = i,column = j).font = openpyxl.styles.Font(name='微软雅黑', size=10)
 
 				if j == 40:
-					if self.OutputSht.cell(row = i,column = j).value == 0:
+					if self.OutputSht.cell(row = i,column = j).value == 0 or self.OutputSht.cell(row = i,column = j).value == '':
 						pass
 					else:
 						self.OutputSht.cell(row = i,column = j).value = ('=IF(D%d="差额发票",ROUND(R%d/1.05*5.77%%,2),IF(D%d="全额发票",ROUND(K%d/1.06*6.77%%,2)))' % (i, i, i, i))
